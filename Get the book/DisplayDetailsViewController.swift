@@ -11,6 +11,7 @@ import FirebaseDatabase
 
 class displayDetailsViewController: UIViewController {
     
+    //Creating outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!

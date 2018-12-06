@@ -15,6 +15,7 @@
 		FE39EA3721B88DAD0093A325 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39EA3621B88DAD0093A325 /* Book.swift */; };
 		FE39EA3921B8A0A00093A325 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39EA3821B8A0A00093A325 /* QRViewController.swift */; };
 		FE39EA3B21B8A8110093A325 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39EA3A21B8A8110093A325 /* UserViewController.swift */; };
+		FE7AB3B721B8D037007D71CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE7AB3B621B8D037007D71CA /* GoogleService-Info.plist */; };
 		FEE9A75121B77E8A00838422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9A75021B77E8A00838422 /* AppDelegate.swift */; };
 		FEE9A75321B77E8A00838422 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9A75221B77E8A00838422 /* LoginViewController.swift */; };
 		FEE9A75621B77E8A00838422 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE9A75421B77E8A00838422 /* Main.storyboard */; };
@@ -22,7 +23,6 @@
 		FEE9A75B21B77E8D00838422 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE9A75921B77E8D00838422 /* LaunchScreen.storyboard */; };
 		FEE9A76621B77E8D00838422 /* Get_the_bookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9A76521B77E8D00838422 /* Get_the_bookTests.swift */; };
 		FEE9A77121B77E8E00838422 /* Get_the_bookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9A77021B77E8E00838422 /* Get_the_bookUITests.swift */; };
-		FEE9A78121B78CA700838422 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEE9A78021B78CA700838422 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +56,7 @@
 		FE39EA3621B88DAD0093A325 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		FE39EA3821B8A0A00093A325 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		FE39EA3A21B8A8110093A325 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		FE7AB3B621B8D037007D71CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FEE9A74D21B77E8A00838422 /* Get the book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Get the book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE9A75021B77E8A00838422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEE9A75221B77E8A00838422 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		FEE9A76C21B77E8D00838422 /* Get the bookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Get the bookUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE9A77021B77E8E00838422 /* Get_the_bookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Get_the_bookUITests.swift; sourceTree = "<group>"; };
 		FEE9A77221B77E8E00838422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEE9A78021B78CA700838422 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF24482ED0DB9232DD6FC650 /* Pods_Get_the_book.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Get_the_book.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -160,7 +160,7 @@
 				FEE9A75721B77E8D00838422 /* Assets.xcassets */,
 				FEE9A75921B77E8D00838422 /* LaunchScreen.storyboard */,
 				FEE9A75C21B77E8D00838422 /* Info.plist */,
-				FEE9A78021B78CA700838422 /* GoogleService-Info.plist */,
+				FE7AB3B621B8D037007D71CA /* GoogleService-Info.plist */,
 			);
 			path = "Get the book";
 			sourceTree = "<group>";
@@ -292,7 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEE9A75B21B77E8D00838422 /* LaunchScreen.storyboard in Resources */,
-				FEE9A78121B78CA700838422 /* GoogleService-Info.plist in Resources */,
+				FE7AB3B721B8D037007D71CA /* GoogleService-Info.plist in Resources */,
 				FEE9A75821B77E8D00838422 /* Assets.xcassets in Resources */,
 				FEE9A75621B77E8A00838422 /* Main.storyboard in Resources */,
 			);
