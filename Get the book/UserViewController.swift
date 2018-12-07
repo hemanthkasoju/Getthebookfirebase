@@ -18,12 +18,14 @@ class UserViewController: UIViewController {
     
 
     @IBAction func scanButtonTapped(_ sender: Any) {
-        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            if segue.identifier == "savedBooks"
-            {
-                let viewController = segue.destination as! QRViewController
-            }
-        }
+          performSegue(withIdentifier: "scanBook", sender: self)
+
+//        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//            if segue.identifier == "savedBooks"
+//            {
+//                let viewController = segue.destination as! QRViewController
+//            }
+//        }
         
     }
     /*

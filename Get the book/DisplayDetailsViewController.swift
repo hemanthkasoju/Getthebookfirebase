@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseDatabase
 
-class displayDetailsViewController: UIViewController {
+class DisplayDetailsViewController: UIViewController {
     
     //Creating outlets
     @IBOutlet weak var titleLabel: UILabel!
@@ -18,20 +19,25 @@ class displayDetailsViewController: UIViewController {
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var publisherLabel: UILabel!
     @IBOutlet weak var urlLabel: UILabel!
-    var databaseReference: DatabaseReference!
+    
+    var databaseReference : DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
-        databaseReference = Database.database().reference(fromURL : "https://qr-code-bdcfe.firebaseio.com/")
+//        FirebaseApp.configure();
+        self.databaseReference = Database.database().reference(fromURL : "https://qr-code-bdcfe.firebaseio.com/")
         let bookId = "1"
  self.databaseReference!.child("books").child(bookId).observeSingleEvent(of: .value, with: {
             (snapshot) in
             if let dictionary = snapshot.value as? [String : AnyObject]{
                 self.titleLabel.text = dictionary["title"] as? String
+                self.authorLabel.text = dictionary["author"] as? String
+                self.genreLabel.text = dictionary["genre"] as? String
+                self.languageLabel.text = dictionary["language"] as? String
+                self.publisherLabel.text = dictionary["publisher"] as? String
+                self.urlLabel.text = dictionary["url"] as? String
+
             }
         }, withCancel: nil)
     }
     
-
-    
-
 }

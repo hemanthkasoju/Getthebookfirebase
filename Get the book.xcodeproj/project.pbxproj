@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		43D8E1D588BC4C3306E16937 /* Pods_Get_the_book.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF24482ED0DB9232DD6FC650 /* Pods_Get_the_book.framework */; };
+		974FD97321B9476000A3EEF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 974FD97221B9476000A3EEF7 /* GoogleService-Info.plist */; };
 		C3B18E71390225F983323C25 /* Pods_Get_the_bookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046DD7DDE00B7B3AE84A370A /* Pods_Get_the_bookTests.framework */; };
 		D037D5550AF81EB1A66A9278 /* Pods_Get_the_bookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A7320DB3068AEB1AC3C7A3 /* Pods_Get_the_bookUITests.framework */; };
 		FE39EA3321B86F200093A325 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39EA3221B86F200093A325 /* AddBookViewController.swift */; };
@@ -15,7 +16,6 @@
 		FE39EA3721B88DAD0093A325 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39EA3621B88DAD0093A325 /* Book.swift */; };
 		FE39EA3921B8A0A00093A325 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39EA3821B8A0A00093A325 /* QRViewController.swift */; };
 		FE39EA3B21B8A8110093A325 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39EA3A21B8A8110093A325 /* UserViewController.swift */; };
-		FE7AB3B721B8D037007D71CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE7AB3B621B8D037007D71CA /* GoogleService-Info.plist */; };
 		FEE9A75121B77E8A00838422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9A75021B77E8A00838422 /* AppDelegate.swift */; };
 		FEE9A75321B77E8A00838422 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9A75221B77E8A00838422 /* LoginViewController.swift */; };
 		FEE9A75621B77E8A00838422 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE9A75421B77E8A00838422 /* Main.storyboard */; };
@@ -48,6 +48,7 @@
 		45C4FF27A8381FC18AD80710 /* Pods-Get the book.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get the book.release.xcconfig"; path = "Pods/Target Support Files/Pods-Get the book/Pods-Get the book.release.xcconfig"; sourceTree = "<group>"; };
 		909A327C4AE87A9C8555D4F0 /* Pods-Get the bookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get the bookUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get the bookUITests/Pods-Get the bookUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		93D08C46639294ED0E5CD915 /* Pods-Get the bookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get the bookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get the bookTests/Pods-Get the bookTests.debug.xcconfig"; sourceTree = "<group>"; };
+		974FD97221B9476000A3EEF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C3A7320DB3068AEB1AC3C7A3 /* Pods_Get_the_bookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Get_the_bookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7476DAB0CA90B9FA0DA6A99 /* Pods-Get the bookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get the bookUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Get the bookUITests/Pods-Get the bookUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F397C053501EA1557F7A6A44 /* Pods-Get the book.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get the book.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get the book/Pods-Get the book.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		FE39EA3621B88DAD0093A325 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		FE39EA3821B8A0A00093A325 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		FE39EA3A21B8A8110093A325 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		FE7AB3B621B8D037007D71CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FEE9A74D21B77E8A00838422 /* Get the book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Get the book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE9A75021B77E8A00838422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEE9A75221B77E8A00838422 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 				FEE9A75721B77E8D00838422 /* Assets.xcassets */,
 				FEE9A75921B77E8D00838422 /* LaunchScreen.storyboard */,
 				FEE9A75C21B77E8D00838422 /* Info.plist */,
-				FE7AB3B621B8D037007D71CA /* GoogleService-Info.plist */,
+				974FD97221B9476000A3EEF7 /* GoogleService-Info.plist */,
 			);
 			path = "Get the book";
 			sourceTree = "<group>";
@@ -292,7 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEE9A75B21B77E8D00838422 /* LaunchScreen.storyboard in Resources */,
-				FE7AB3B721B8D037007D71CA /* GoogleService-Info.plist in Resources */,
+				974FD97321B9476000A3EEF7 /* GoogleService-Info.plist in Resources */,
 				FEE9A75821B77E8D00838422 /* Assets.xcassets in Resources */,
 				FEE9A75621B77E8A00838422 /* Main.storyboard in Resources */,
 			);
