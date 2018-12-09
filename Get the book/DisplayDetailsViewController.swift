@@ -23,7 +23,7 @@ class DisplayDetailsViewController: UIViewController {
     var databaseReference : DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        FirebaseApp.configure();
+        FirebaseApp.configure();
         self.databaseReference = Database.database().reference(fromURL : "https://qr-code-bdcfe.firebaseio.com/")
         let bookId = "1"
  self.databaseReference!.child("books").child(bookId).observeSingleEvent(of: .value, with: {

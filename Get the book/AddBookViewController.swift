@@ -8,6 +8,7 @@
 
 import UIKit
 import  Firebase
+import FirebaseDatabase
 
 class AddBookViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -27,9 +28,6 @@ class AddBookViewController : UIViewController, UIPickerViewDelegate, UIPickerVi
     
     var isExists: Bool!
     
-    
-    
-    
     let genres = ["Action","Art","Autobiography","Comics","Drama","Fantasy","Fiction","History","Horror","Mystery","Poetry","Romance","Satire","Science"]
     let languages = ["English","French","Spanish","Hindi"]
     
@@ -40,7 +38,7 @@ class AddBookViewController : UIViewController, UIPickerViewDelegate, UIPickerVi
         createGenrePicker()
         createLanguagePicker()
         createToolBar()
-//        FirebaseApp.configure()
+        FirebaseApp.configure()
         //To dismiss the keyboard.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddBookViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
