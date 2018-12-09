@@ -427,7 +427,7 @@
         <!--Display Details View Controller-->
         <scene sceneID="jer-e6-gRk">
             <objects>
-                <viewController id="ABO-Cc-gSz" customClass="displayDetailsViewController" customModule="Get_the_book" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ABO-Cc-gSz" customClass="DisplayDetailsViewController" customModule="Get_the_book" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2pz-Ni-ClG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
