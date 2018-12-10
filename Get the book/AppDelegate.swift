@@ -17,12 +17,11 @@ import Firebase
     func application(_ application: UIApplication, didFinishLaunchingWxsithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        FirebaseApp.configure()
         return true
     }
     
     override init() {
-        // Firebase Init
+        // Firebase Init.... To configure firebase
         FirebaseApp.configure()
     }
 

@@ -25,20 +25,18 @@ class DisplayDetailsViewController: UIViewController {
     
     @IBOutlet weak var editButton: UIButton!
     
+    // Called when share button is tapped
     @IBAction func shareButtonTapped(_ sender: Any) {
+        // To use the applications for sharing text
         let activityController = UIActivityViewController(activityItems: [titleLabel.text!,"Author : ", authorLabel.text!, "Publisher : ", publisherLabel.text!, "Genre : ", genreLabel.text!, "language :", languageLabel.text!, "URL for online access : ", urlLabel.text!, "Location : Archer Library, University of Regina" ], applicationActivities: nil)
+        
         present(activityController, animated: true, completion: nil)
     }
+    // Used for accessing bookID value passed from the Camera
     var stringRecieved : String!
     var isPresent : Bool!
-    
+    // Creates a reference to the firebase database
     var databaseReference : DatabaseReference!
-    
-    
-    @IBAction func editButtonTapped(_ sender: Any) {
-//        self.performSegue(withIdentifier: "addDetails", sender: self)
-    }
-    
     
     
     override func viewDidLoad() {
@@ -46,52 +44,17 @@ class DisplayDetailsViewController: UIViewController {
         super.viewDidLoad()
         print(self.stringRecieved)
         
+        // Connects the application to the firebase database
          self.databaseReference = Database.database().reference(fromURL : "https://qr-code-bdcfe.firebaseio.com/")
         
-       
-        
-//        self.databaseReference.child("books").observeSingleEvent(of: .value, with: { (snapshot) in
-//
-//            if snapshot.hasChild(self.stringRecieved){
-//                self.isPresent = true
-//            }
-//            else{
-//                self.isPresent = false
-//            }
-//
-//        }, withCancel: nil)
-       
-//        if self.isPresent {
-//            self.titleLabel.text = stringRecieved
-//            self.authorLabel.text = ""
-//            self.genreLabel.text = ""
-//            self.languageLabel.text = ""
-//            self.publisherLabel.text = ""
-//            self.urlLabel.text = ""
-//        }
-//        else{
+        // Retrieves the values from the database and stores in snapshot
         self.databaseReference!.child("books").child(self.stringRecieved).observeSingleEvent(of: .value, with: {
                 (snapshot) in
+            //Checks if values corresponding to the bookID are found in the database and stoes as a dictionary with corresponding key value pairs
                 if let dictionary = snapshot.value as? [String : AnyObject]{
-//                    self.titleLabel.text = dictionary["title"] as? String
-//                    self.authorLabel.text = dictionary["author"] as? String
-//                    self.genreLabel.text = dictionary["genre"] as? String
-//                    self.languageLabel.text = dictionary["language"] as? String
-//                    self.publisherLabel.text = dictionary["publisher"] as? String
-//                    self.urlLabel.text = dictionary["url"] as? String
-                    if dictionary["title"] as? String != "" && dictionary["title"] as? String != nil {
-                        titleString = (dictionary["title"] as? String)!
-                    }
                     
-                    if titleString == "" {
-                        self.titleLabel.text = "Book not found"
-                                    self.authorLabel.text = ""
-                                    self.genreLabel.text = ""
-                                    self.languageLabel.text = ""
-                                    self.publisherLabel.text = ""
-                                    self.urlLabel.text = ""
-                    }
-                    else{
+                    // If the bookID is found in the database, displays the corresponding details of the book
+                
                         self.titleLabel.text = dictionary["title"] as? String
                         self.authorLabel.text = dictionary["author"] as? String
                         self.genreLabel.text = dictionary["genre"] as? String
@@ -99,9 +62,11 @@ class DisplayDetailsViewController: UIViewController {
                         self.publisherLabel.text = dictionary["publisher"] as? String
                         self.urlLabel.text = dictionary["url"] as? String
                         
-                    }
             }
                 else{
+                    
+                    // Displays book not found if the bookID is vot found in the database
+                    
                     self.titleLabel.text = "Book not found"
                     self.authorLabel.text = ""
                     self.genreLabel.text = ""
@@ -112,20 +77,17 @@ class DisplayDetailsViewController: UIViewController {
                         self.shareButton!.isHidden = true
                     }
             }
-        }){ (error) in
-            print("Error")
-        }
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Navigates to edit page if the user clicks on edit and the book already exists in the database
         if segue.identifier == "librarianEdit" {
             guard let viewController = segue.destination as? AddBookViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
-                
             }
+            // Passes the bookID to edit the details of an existing book
             viewController.bookID = self.stringRecieved
         }
-    
     }
-    
 }

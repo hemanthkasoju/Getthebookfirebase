@@ -15,17 +15,17 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
+    // To check if the user is a visitor or a librarian. It will be true for visitor and false for librarian
     var isUser: Bool!
     
     
-    
+    // To set default values
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.isUser = false
     }
     
-    
+    // Called when login button is called
     @IBAction func loginButtonTapped(_ sender: Any) {
         self.isUser = false
         let userEmail = userNameTextField.text;
@@ -54,21 +54,12 @@ class LoginViewController: UIViewController {
                 
                 performSegue(withIdentifier: "librarianView", sender: self)
 
-                
-           //     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-                    
-                    // Create a variable that you want to send
-                   // var isUser : Bool!
-                    
-                    // Create a new variable to store the instance of PlayerTableViewController
-//                    let destinationVC = segue.destination as! QRViewController
-//                    destinationVC.isUser = isUser
-                    
-                }
+            }
         }
         else{
-            
+            // Popup to show that Librarian incorrect credentials are incorrect
             let myAlert = UIAlertController(title: "Alert", message: "Incorrect Credentials. Try Again.", preferredStyle: .alert);
+            // To add a button to the popup
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil);
             
             myAlert.addAction(okAction);
@@ -79,7 +70,7 @@ class LoginViewController: UIViewController {
         
     }
 
-    
+    // Called when there is a poopup
     func displayAlertMessage(_ userMessage: String){
         let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: .alert);
     let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil);
@@ -90,32 +81,15 @@ class LoginViewController: UIViewController {
     }
     
     
- 
-       // self.isUser = true
-
-    
-    @IBAction func startButtonTapped(_ sender: Any) {
-       
-//          performSegue(withIdentifier: "userView", sender: self)
-//        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//            if segue.identifier == "userView"
-//            {
-//                let viewController = segue.destination as! UserViewController
-//            }
-//        }
-        
-}
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Dismiss the keyboard when the user taps anywhere on the screen
-       // self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Books"))
-        
+        // Add backgroung image
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "books")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         
+        // Dismiss the keyboard when the user taps anywhere on the screen
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
        
@@ -126,25 +100,31 @@ class LoginViewController: UIViewController {
         view.endEditing(true)
     }
     
+    // Navigates View controller based on the conditions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         super.prepare(for: segue, sender: sender)
         
         switch(segue.identifier ?? "") {
             
+        // Navigates to Camera for librarian
         case "librarianView":
-//                    os_log("Adding a new meal.", log: OSLog.default, type: .debug)
             guard let viewController = segue.destination as? QRViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
+            // Passes the value to next view controller
             viewController.user = self.isUser;
             
+        // Navigates to camera for visitor
         case "userView":
+            
             self.isUser = true;
 
             guard let viewController = segue.destination as? QRViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
+            
+            // Passes the value to next view controller
         viewController.user = self.isUser;
             
         default:

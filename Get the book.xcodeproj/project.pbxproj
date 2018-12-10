@@ -16,7 +16,6 @@
 		FE39EA3521B88D830093A325 /* DisplayDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39EA3421B88D830093A325 /* DisplayDetailsViewController.swift */; };
 		FE39EA3721B88DAD0093A325 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39EA3621B88DAD0093A325 /* Book.swift */; };
 		FE39EA3921B8A0A00093A325 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39EA3821B8A0A00093A325 /* QRViewController.swift */; };
-		FE39EA3B21B8A8110093A325 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39EA3A21B8A8110093A325 /* UserViewController.swift */; };
 		FEE9A75121B77E8A00838422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9A75021B77E8A00838422 /* AppDelegate.swift */; };
 		FEE9A75321B77E8A00838422 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9A75221B77E8A00838422 /* LoginViewController.swift */; };
 		FEE9A75621B77E8A00838422 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE9A75421B77E8A00838422 /* Main.storyboard */; };
@@ -58,7 +57,6 @@
 		FE39EA3421B88D830093A325 /* DisplayDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDetailsViewController.swift; sourceTree = "<group>"; };
 		FE39EA3621B88DAD0093A325 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		FE39EA3821B8A0A00093A325 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
-		FE39EA3A21B8A8110093A325 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		FEE9A74D21B77E8A00838422 /* Get the book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Get the book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE9A75021B77E8A00838422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEE9A75221B77E8A00838422 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 				FEE9A75221B77E8A00838422 /* LoginViewController.swift */,
 				FEE9A75421B77E8A00838422 /* Main.storyboard */,
 				9780E96421BE082C004618D4 /* NotFoundViewController.swift */,
-				FE39EA3A21B8A8110093A325 /* UserViewController.swift */,
 				FE39EA3421B88D830093A325 /* DisplayDetailsViewController.swift */,
 				FE39EA3621B88DAD0093A325 /* Book.swift */,
 				FE39EA3221B86F200093A325 /* AddBookViewController.swift */,
@@ -420,7 +417,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE39EA3B21B8A8110093A325 /* UserViewController.swift in Sources */,
 				FE39EA3521B88D830093A325 /* DisplayDetailsViewController.swift in Sources */,
 				FEE9A75321B77E8A00838422 /* LoginViewController.swift in Sources */,
 				9780E96521BE082C004618D4 /* NotFoundViewController.swift in Sources */,

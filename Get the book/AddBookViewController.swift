@@ -23,9 +23,7 @@ class AddBookViewController : UIViewController, UIPickerViewDelegate, UIPickerVi
     var bookID: String!
     
     @IBAction func saveDetails(_ sender: Any) {
-        //let uid = "1"
-       // self.bookID = "00007"
-        
+     
         let title = titleText.text
         let author = authorText.text
         let genre = genreText.text
@@ -33,15 +31,16 @@ class AddBookViewController : UIViewController, UIPickerViewDelegate, UIPickerVi
         let language = languageText.text
         let link = linkText.text
         
-        
+        // Does not let the librarian to leave any field empty
         if((title?.isEmpty)! || (author?.isEmpty)! || (genre?.isEmpty)! || (publisher?.isEmpty)! || (language?.isEmpty)! || (link?.isEmpty)!  )
         {
             displayAlertMessage("All feilds are required.");
             return;
         }
         
+        // Writes the details entered for a bookID to the firebase database
         self.databaseReference.child("books").child(self.bookID).setValue(["title": titleText.text, "author" : authorText.text, "genre" : genreText.text, "publisher" : publisherText.text, "language" : languageText.text])
-        
+        // Shows alert
         let savedAlert = UIAlertController(title: "Alert", message: "Saved Successfully", preferredStyle: .alert);
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil);
         
@@ -50,7 +49,7 @@ class AddBookViewController : UIViewController, UIPickerViewDelegate, UIPickerVi
         self.present(savedAlert, animated: true, completion: nil)
 
     }
-    
+    // For displaying aler
     func displayAlertMessage(_ userMessage: String){
         let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: .alert);
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil);
@@ -59,9 +58,6 @@ class AddBookViewController : UIViewController, UIPickerViewDelegate, UIPickerVi
         
         self.present(myAlert, animated: true, completion: nil)
     }
-    
-    
-    
     
     var isExists: Bool!
     
