@@ -141,12 +141,17 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
                     isDetected = true
                     value = object.stringValue
                     print(object.stringValue);
-                    self.isExists  = checkIfExists(bookId: object.stringValue!)
+                    self.isExists = checkIfExists(bookId: object.stringValue!)
+                    
+                    if (self.isExists) {
 //                    let alert = UIAlertController(title: "QR Code", message: object.stringValue , preferredStyle: .alert)
 //                    alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
 //                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alert:UIAlertAction) -> Void in
                         self.performSegue(withIdentifier: "showDetails", sender: self)
-//
+                    }
+                    else{
+                        self.performSegue(withIdentifier: "notFound", sender: self)}
+                    //
 //                    }))
 //
                     
@@ -396,11 +401,16 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             
         }
         else {
-            guard let viewController = segue.destination as? DisplayDetailsViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-            viewController.stringRecieved = "Book Not Found";
-            print("Book not found")
+            if segue.identifier == "notFound" {
+                guard let viewController = segue.destination as? NotFoundViewController else {
+                    fatalError("Unexpected destination: \(segue.destination)")
+                    
+                }
+            //            guard let viewController = segue.destination as? DisplayDetailsViewController else {
+//                fatalError("Unexpected destination: \(segue.destination)")
+//            }
+//            viewController.stringRecieved = "Book Not Found";
+//            print("Book not found")
         }
                
 }
@@ -443,4 +453,5 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             }
             
 
+}
 }

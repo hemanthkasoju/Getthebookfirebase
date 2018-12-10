@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		43D8E1D588BC4C3306E16937 /* Pods_Get_the_book.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF24482ED0DB9232DD6FC650 /* Pods_Get_the_book.framework */; };
 		974FD97321B9476000A3EEF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 974FD97221B9476000A3EEF7 /* GoogleService-Info.plist */; };
+		9780E96521BE082C004618D4 /* NotFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9780E96421BE082C004618D4 /* NotFoundViewController.swift */; };
 		C3B18E71390225F983323C25 /* Pods_Get_the_bookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046DD7DDE00B7B3AE84A370A /* Pods_Get_the_bookTests.framework */; };
 		D037D5550AF81EB1A66A9278 /* Pods_Get_the_bookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A7320DB3068AEB1AC3C7A3 /* Pods_Get_the_bookUITests.framework */; };
 		FE39EA3321B86F200093A325 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39EA3221B86F200093A325 /* AddBookViewController.swift */; };
@@ -49,6 +50,7 @@
 		909A327C4AE87A9C8555D4F0 /* Pods-Get the bookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get the bookUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get the bookUITests/Pods-Get the bookUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		93D08C46639294ED0E5CD915 /* Pods-Get the bookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get the bookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get the bookTests/Pods-Get the bookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		974FD97221B9476000A3EEF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9780E96421BE082C004618D4 /* NotFoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundViewController.swift; sourceTree = "<group>"; };
 		C3A7320DB3068AEB1AC3C7A3 /* Pods_Get_the_bookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Get_the_bookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7476DAB0CA90B9FA0DA6A99 /* Pods-Get the bookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get the bookUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Get the bookUITests/Pods-Get the bookUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F397C053501EA1557F7A6A44 /* Pods-Get the book.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get the book.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get the book/Pods-Get the book.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				FEE9A75021B77E8A00838422 /* AppDelegate.swift */,
 				FEE9A75221B77E8A00838422 /* LoginViewController.swift */,
 				FEE9A75421B77E8A00838422 /* Main.storyboard */,
+				9780E96421BE082C004618D4 /* NotFoundViewController.swift */,
 				FE39EA3A21B8A8110093A325 /* UserViewController.swift */,
 				FE39EA3421B88D830093A325 /* DisplayDetailsViewController.swift */,
 				FE39EA3621B88DAD0093A325 /* Book.swift */,
@@ -420,6 +423,7 @@
 				FE39EA3B21B8A8110093A325 /* UserViewController.swift in Sources */,
 				FE39EA3521B88D830093A325 /* DisplayDetailsViewController.swift in Sources */,
 				FEE9A75321B77E8A00838422 /* LoginViewController.swift in Sources */,
+				9780E96521BE082C004618D4 /* NotFoundViewController.swift in Sources */,
 				FE39EA3321B86F200093A325 /* AddBookViewController.swift in Sources */,
 				FE39EA3721B88DAD0093A325 /* Book.swift in Sources */,
 				FEE9A75121B77E8A00838422 /* AppDelegate.swift in Sources */,
