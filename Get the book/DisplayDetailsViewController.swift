@@ -45,7 +45,10 @@ class DisplayDetailsViewController: UIViewController {
         var titleString = ""
         super.viewDidLoad()
         print(self.stringRecieved)
+        
          self.databaseReference = Database.database().reference(fromURL : "https://qr-code-bdcfe.firebaseio.com/")
+        
+       
         
 //        self.databaseReference.child("books").observeSingleEvent(of: .value, with: { (snapshot) in
 //
