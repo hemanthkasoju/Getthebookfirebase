@@ -41,6 +41,13 @@ class AddBookViewController : UIViewController, UIPickerViewDelegate, UIPickerVi
         }
         
         self.databaseReference.child("books").child(self.bookID).setValue(["title": titleText.text, "author" : authorText.text, "genre" : genreText.text, "publisher" : publisherText.text, "language" : languageText.text])
+        
+        let savedAlert = UIAlertController(title: "Alert", message: "Saved Successfully", preferredStyle: .alert);
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil);
+        
+        savedAlert.addAction(okAction);
+        
+        self.present(savedAlert, animated: true, completion: nil)
 
     }
     
