@@ -76,6 +76,13 @@ class AddBookViewController : UIViewController, UIPickerViewDelegate, UIPickerVi
         createLanguagePicker()
         createToolBar()
 //        FirebaseApp.configure()
+        
+        
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "enterDetails")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+        
         //To dismiss the keyboard.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddBookViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
