@@ -114,8 +114,13 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
 
         video = AVCaptureVideoPreviewLayer(session: captureSession)
         video.frame = view.layer.bounds
-        view.layer.addSublayer(video)
-
+        if (view.layer.sublayers != nil) {
+            let video_layer = view.layer.sublayers?.filter {$0 == video}
+            if video_layer?.count == 0 {
+                view.layer.addSublayer(video)
+            }
+        }
+      
      //   self.view.bringSubviewToFront(square)
 
         captureSession.startRunning()
@@ -141,16 +146,30 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
                     isDetected = true
                     value = object.stringValue
                     print(object.stringValue);
-                    self.isExists = checkIfExists(bookId: object.stringValue!)
+//                    self.isExists = checkIfExists(bookId: object.stringValue!)
                     
-                    if (self.isExists) {
+                    self.captureSession.stopRunning()
+
+//                    print("IsExists : ", self.isExists)
+                    if (self.user) {
+//                    if (self.isExists) {
 //                    let alert = UIAlertController(title: "QR Code", message: object.stringValue , preferredStyle: .alert)
 //                    alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
 //                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alert:UIAlertAction) -> Void in
                         self.performSegue(withIdentifier: "showDetails", sender: self)
+//                    }
+//                    else{
+//                        self.performSegue(withIdentifier: "notFound", sender: self)
+                        
                     }
+//                    }
                     else{
-                        self.performSegue(withIdentifier: "notFound", sender: self)}
+//                        if (self.isExists) {
+                            self.performSegue(withIdentifier: "existingDetails", sender: self)
+//                        }
+//                        else {
+//                            self.performSegue(withIdentifier: "addDetails", sender: self)                        }
+                        }
                     //
 //                    }))
 //
@@ -227,6 +246,7 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     
     func checkIfExists(bookId : String) -> Bool {
         var isPresent = false
+        print(bookId)
         self.databaseReference.child("books").observeSingleEvent(of: .value, with: { (snapshot) in
             
             if snapshot.hasChild(bookId){
@@ -389,8 +409,8 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     //                         self.performSegue(withIdentifier: "addDetails", sender: self)
     //
     //                    }
-    if self.user{
-        if self.isExists {
+    if (self.user){
+//        if self.isExists {
             if segue.identifier == "showDetails" {
             guard let viewController = segue.destination as? DisplayDetailsViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
@@ -399,23 +419,44 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                 viewController.stringRecieved = value;
             }
             
-        }
-        else {
-            if segue.identifier == "notFound" {
-                guard let viewController = segue.destination as? NotFoundViewController else {
+//        }
+//        else {
+//            if segue.identifier == "notFound" {
+//                guard let viewController = segue.destination as? NotFoundViewController else {
+//                    fatalError("Unexpected destination: \(segue.destination)")
+//
+//                }
+//            //            guard let viewController = segue.destination as? DisplayDetailsViewController else {
+////                fatalError("Unexpected destination: \(segue.destination)")
+////            }
+////            viewController.stringRecieved = "Book Not Found";
+////            print("Book not found")
+//        }
+//
+//}
+    }
+    else {
+//        if self.isExists {
+            if segue.identifier == "existingDetails" {
+                guard let viewController = segue.destination as? DisplayDetailsViewController else {
                     fatalError("Unexpected destination: \(segue.destination)")
                     
                 }
-            //            guard let viewController = segue.destination as? DisplayDetailsViewController else {
-//                fatalError("Unexpected destination: \(segue.destination)")
-//            }
-//            viewController.stringRecieved = "Book Not Found";
-//            print("Book not found")
-        }
-               
-}
-   
-        
+                viewController.stringRecieved = value;
+//                viewController.bookID = self.value;
+            }
+            
+//        }
+//        else{
+//            if segue.identifier == "addDetails" {
+//                guard let viewController = segue.destination as? AddBookViewController else {
+//                    fatalError("Unexpected destination: \(segue.destination)")}
+//
+//                    viewController.bookID = self.value;
+//
+//                     }
+//    }
+    }
    
 //    case "AddItem":
 //        os_log("Adding a new meal.", log: OSLog.default, type: .debug)
@@ -449,9 +490,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        default:
 //            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
 //        }
-        
-            }
-            
+    
 
 }
 }

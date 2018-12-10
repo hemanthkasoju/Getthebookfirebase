@@ -46,11 +46,14 @@ class LoginViewController: UIViewController {
         {
             if(password == "admin")
             {
+                self.isUser = false;
+
                 //Login successful
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                 UserDefaults.standard.synchronize();
                 
                 performSegue(withIdentifier: "librarianView", sender: self)
+
                 
            //     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
                     
@@ -82,7 +85,8 @@ class LoginViewController: UIViewController {
 
     
     @IBAction func startButtonTapped(_ sender: Any) {
-          performSegue(withIdentifier: "userView", sender: self)
+       
+//          performSegue(withIdentifier: "userView", sender: self)
 //        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //            if segue.identifier == "userView"
 //            {
@@ -116,14 +120,14 @@ class LoginViewController: UIViewController {
             guard let viewController = segue.destination as? QRViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-                    isUser = false;
             viewController.user = self.isUser;
             
         case "userView":
+            self.isUser = true;
+
             guard let viewController = segue.destination as? QRViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-        isUser = true;
         viewController.user = self.isUser;
             
         default:

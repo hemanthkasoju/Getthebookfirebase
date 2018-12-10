@@ -45,7 +45,6 @@
                                 <state key="normal" title="LOGIN"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tXl-J1-5H5"/>
-                                    <segue destination="ri6-gr-AW5" kind="show" identifier="librarianView" id="goB-sm-zkB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-----------------------OR----------------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3th-IW-qEP">
@@ -93,6 +92,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="GNJ-6w-vL1" id="IAa-KC-0X9"/>
                         <outlet property="userNameTextField" destination="48t-fO-2dI" id="WEC-4b-7XE"/>
+                        <segue destination="ri6-gr-AW5" kind="show" identifier="librarianView" id="UbQ-qD-BRf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rS5-f6-fLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3442" y="1808"/>
+            <point key="canvasLocation" x="-2918" y="1827"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s43-Sv-tr1">
@@ -236,6 +236,7 @@
                         <segue destination="ABO-Cc-gSz" kind="show" identifier="existingDetails" id="uLU-nl-CYa"/>
                         <segue destination="TGC-50-qy0" kind="show" identifier="showDetails" id="uE6-sx-nQ5"/>
                         <segue destination="Ond-Ez-3dT" kind="show" identifier="notFound" id="e5j-to-hO6"/>
+                        <segue destination="nDY-0n-EzV" kind="show" identifier="librarianBookNotFound" id="S5K-kZ-ngC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVQ-d4-IuH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -346,9 +347,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqy-hV-afU">
-                                <rect key="frame" x="180" y="544" width="30" height="30"/>
+                                <rect key="frame" x="167" y="482" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="OK"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareButtonTapped:" destination="TGC-50-qy0" eventType="touchUpInside" id="ORw-3r-ebB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -477,7 +481,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dC7-LH-coY">
-                                <rect key="frame" x="166" y="544" width="44" height="30"/>
+                                <rect key="frame" x="165" y="454" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
@@ -501,9 +505,41 @@
             </objects>
             <point key="canvasLocation" x="-1815" y="1808"/>
         </scene>
+        <!--Not Found View Controller-->
+        <scene sceneID="gNN-QV-Ti7">
+            <objects>
+                <viewController id="nDY-0n-EzV" customClass="NotFoundViewController" customModule="Get_the_book" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P7e-q4-yYW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book Not Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GII-1D-o8Z">
+                                <rect key="frame" x="125" y="288" width="124" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VY5-Kt-bny">
+                                <rect key="frame" x="154" y="508" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Book"/>
+                                <connections>
+                                    <segue destination="CM2-es-DDO" kind="show" identifier="librarianAdd" id="qn7-G5-MZM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="CrF-Zq-1C1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ilp-Uw-YxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2999.1999999999998" y="938.68065967016503"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="esP-o7-Eha"/>
-        <segue reference="ult-tO-Xm3"/>
+        <segue reference="UbQ-qD-BRf"/>
+        <segue reference="oqX-LX-XZ2"/>
     </inferredMetricsTieBreakers>
 </document>

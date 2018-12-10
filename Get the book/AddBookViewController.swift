@@ -20,9 +20,13 @@ class AddBookViewController : UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var languageText: UITextField!
     @IBOutlet weak var linkText: UITextField!
     
+    var bookID: String!
+    
     @IBAction func saveDetails(_ sender: Any) {
-        let uid = "1"
-        self.databaseReference.child("books").child(uid).setValue(["title": titleText.text, "author" : authorText.text, "genre" : genreText.text, "publisher" : publisherText.text, "language" : languageText.text])
+        //let uid = "1"
+        self.bookID = "00007"
+        
+        self.databaseReference.child("books").child(self.bookID).setValue(["title": titleText.text, "author" : authorText.text, "genre" : genreText.text, "publisher" : publisherText.text, "language" : languageText.text])
 
     }
     
@@ -38,7 +42,7 @@ class AddBookViewController : UIViewController, UIPickerViewDelegate, UIPickerVi
         createGenrePicker()
         createLanguagePicker()
         createToolBar()
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
         //To dismiss the keyboard.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddBookViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
