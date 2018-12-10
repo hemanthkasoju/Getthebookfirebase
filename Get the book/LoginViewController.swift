@@ -66,6 +66,16 @@ class LoginViewController: UIViewController {
                     
                 }
         }
+        else{
+            
+            let myAlert = UIAlertController(title: "Alert", message: "Incorrect Credentials. Try Again.", preferredStyle: .alert);
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil);
+            
+            myAlert.addAction(okAction);
+            
+            self.present(myAlert, animated: true, completion: nil)
+            
+        }
         
     }
 
