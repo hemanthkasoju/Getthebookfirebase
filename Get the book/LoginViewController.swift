@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import os.log
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var userNameTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
+    
     
     var isUser: Bool!
     
@@ -102,6 +104,34 @@ class LoginViewController: UIViewController {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "librarianView":
+//                    os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+            guard let viewController = segue.destination as? QRViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+                    isUser = false;
+            viewController.user = self.isUser;
+            
+        case "userView":
+            guard let viewController = segue.destination as? QRViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+        isUser = true;
+        viewController.user = self.isUser;
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
+    }
+    
+    
 
 }
 

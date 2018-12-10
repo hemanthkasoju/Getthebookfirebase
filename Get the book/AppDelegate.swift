@@ -9,8 +9,7 @@
 import UIKit
 import Firebase
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+@UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
@@ -18,8 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWxsithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
         return true
+    }
+    
+    override init() {
+        // Firebase Init
+        FirebaseApp.configure()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

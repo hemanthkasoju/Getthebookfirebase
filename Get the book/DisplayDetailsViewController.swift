@@ -20,24 +20,36 @@ class DisplayDetailsViewController: UIViewController {
     @IBOutlet weak var publisherLabel: UILabel!
     @IBOutlet weak var urlLabel: UILabel!
     
+    var stringRecieved : String!
+    
     var databaseReference : DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseApp.configure();
-        self.databaseReference = Database.database().reference(fromURL : "https://qr-code-bdcfe.firebaseio.com/")
-        let bookId = "1"
- self.databaseReference!.child("books").child(bookId).observeSingleEvent(of: .value, with: {
-            (snapshot) in
-            if let dictionary = snapshot.value as? [String : AnyObject]{
-                self.titleLabel.text = dictionary["title"] as? String
-                self.authorLabel.text = dictionary["author"] as? String
-                self.genreLabel.text = dictionary["genre"] as? String
-                self.languageLabel.text = dictionary["language"] as? String
-                self.publisherLabel.text = dictionary["publisher"] as? String
-                self.urlLabel.text = dictionary["url"] as? String
-
+        print(stringRecieved)
+        
+        if stringRecieved == "Book Not Found" {
+            self.titleLabel.text = stringRecieved
+            self.authorLabel.text = ""
+            self.genreLabel.text = ""
+            self.languageLabel.text = ""
+            self.publisherLabel.text = ""
+            self.urlLabel.text = ""
+        }
+        else{
+            self.databaseReference = Database.database().reference(fromURL : "https://qr-code-bdcfe.firebaseio.com/")
+            let bookId = "1"
+            self.databaseReference!.child("books").child(bookId).observeSingleEvent(of: .value, with: {
+                (snapshot) in
+                if let dictionary = snapshot.value as? [String : AnyObject]{
+                    self.titleLabel.text = dictionary["title"] as? String
+                    self.authorLabel.text = dictionary["author"] as? String
+                    self.genreLabel.text = dictionary["genre"] as? String
+                    self.languageLabel.text = dictionary["language"] as? String
+                    self.publisherLabel.text = dictionary["publisher"] as? String
+                    self.urlLabel.text = dictionary["url"] as? String
             }
         }, withCancel: nil)
+        }
     }
     
 }
