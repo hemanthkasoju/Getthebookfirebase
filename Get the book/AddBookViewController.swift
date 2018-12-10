@@ -26,9 +26,35 @@ class AddBookViewController : UIViewController, UIPickerViewDelegate, UIPickerVi
         //let uid = "1"
        // self.bookID = "00007"
         
+        let title = titleText.text
+        let author = authorText.text
+        let genre = genreText.text
+        let publisher = publisherText.text
+        let language = languageText.text
+        let link = linkText.text
+        
+        
+        if((title?.isEmpty)! || (author?.isEmpty)! || (genre?.isEmpty)! || (publisher?.isEmpty)! || (language?.isEmpty)! || (link?.isEmpty)!  )
+        {
+            displayAlertMessage("All feilds are required.");
+            return;
+        }
+        
         self.databaseReference.child("books").child(self.bookID).setValue(["title": titleText.text, "author" : authorText.text, "genre" : genreText.text, "publisher" : publisherText.text, "language" : languageText.text])
 
     }
+    
+    func displayAlertMessage(_ userMessage: String){
+        let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: .alert);
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil);
+        
+        myAlert.addAction(okAction);
+        
+        self.present(myAlert, animated: true, completion: nil)
+    }
+    
+    
+    
     
     var isExists: Bool!
     
