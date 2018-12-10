@@ -24,7 +24,7 @@ class AddBookViewController : UIViewController, UIPickerViewDelegate, UIPickerVi
     
     @IBAction func saveDetails(_ sender: Any) {
         //let uid = "1"
-        self.bookID = "00007"
+       // self.bookID = "00007"
         
         self.databaseReference.child("books").child(self.bookID).setValue(["title": titleText.text, "author" : authorText.text, "genre" : genreText.text, "publisher" : publisherText.text, "language" : languageText.text])
 

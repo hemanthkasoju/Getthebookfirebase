@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 import Firebase
 import FirebaseDatabase
 
@@ -20,6 +21,10 @@ class DisplayDetailsViewController: UIViewController {
     @IBOutlet weak var publisherLabel: UILabel!
     @IBOutlet weak var urlLabel: UILabel!
     
+    @IBOutlet weak var shareButton: UIButton!
+    
+    @IBOutlet weak var editButton: UIButton!
+    
     @IBAction func shareButtonTapped(_ sender: Any) {
         let activityController = UIActivityViewController(activityItems: [titleLabel.text!,"Author : ", authorLabel.text!, "Publisher : ", publisherLabel.text!, "Genre : ", genreLabel.text!, "language :", languageLabel.text!, "URL for online access : ", urlLabel.text!, "Location : Archer Library, University of Regina" ], applicationActivities: nil)
         present(activityController, animated: true, completion: nil)
@@ -28,6 +33,13 @@ class DisplayDetailsViewController: UIViewController {
     var isPresent : Bool!
     
     var databaseReference : DatabaseReference!
+    
+    
+    @IBAction func editButtonTapped(_ sender: Any) {
+//        self.performSegue(withIdentifier: "addDetails", sender: self)
+    }
+    
+    
     
     override func viewDidLoad() {
         var titleString = ""
@@ -93,10 +105,24 @@ class DisplayDetailsViewController: UIViewController {
                     self.languageLabel.text = ""
                     self.publisherLabel.text = ""
                     self.urlLabel.text = ""
+                    if self.shareButton != nil {
+                        self.shareButton!.isHidden = true
+                    }
             }
         }){ (error) in
             print("Error")
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "librarianEdit" {
+            guard let viewController = segue.destination as? AddBookViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+                
+            }
+            viewController.bookID = self.stringRecieved
+        }
+    
     }
     
 }
