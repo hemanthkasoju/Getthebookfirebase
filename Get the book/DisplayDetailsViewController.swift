@@ -25,6 +25,11 @@ class DisplayDetailsViewController: UIViewController {
     
     @IBOutlet weak var editButton: UIButton!
     
+    @IBAction func editButtonTapped(_ sender: Any) {
+//        self.performSegue(with Identifier: "librarianEdit", sender: self)
+
+        
+    }
     // Called when share button is tapped
     @IBAction func shareButtonTapped(_ sender: Any) {
         // To use the applications for sharing text
@@ -40,6 +45,12 @@ class DisplayDetailsViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "white")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+
         var titleString = ""
         super.viewDidLoad()
         print(self.stringRecieved)

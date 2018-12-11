@@ -39,10 +39,16 @@ class AddBookViewController : UIViewController, UIPickerViewDelegate, UIPickerVi
         }
         
         // Writes the details entered for a bookID to the firebase database
-        self.databaseReference.child("books").child(self.bookID).setValue(["title": titleText.text, "author" : authorText.text, "genre" : genreText.text, "publisher" : publisherText.text, "language" : languageText.text])
+        self.databaseReference.child("books").child(self.bookID).setValue(["title": titleText.text, "author" : authorText.text, "genre" : genreText.text, "publisher" : publisherText.text, "language" : languageText.text, "url" : linkText.text])
         // Shows alert
         let savedAlert = UIAlertController(title: "Alert", message: "Saved Successfully", preferredStyle: .alert);
-        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil);
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (alert:UIAlertAction) -> Void in
+                                        self.performSegue(withIdentifier: "showCamera", sender: self)
+            
+            
+        })
+        
+        
         
         savedAlert.addAction(okAction);
         

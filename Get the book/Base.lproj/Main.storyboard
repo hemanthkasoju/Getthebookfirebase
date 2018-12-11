@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ilw-wI-lSp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ilw-wI-lSp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -190,6 +190,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Cancel" backgroundImage="add"/>
+                                <connections>
+                                    <segue destination="ri6-gr-AW5" kind="show" identifier="showCamera" id="0h6-lJ-fTQ"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the URL of the Book" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uO6-Uk-IxN">
                                 <rect key="frame" x="16" y="551" width="343" height="30"/>
@@ -220,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rS5-f6-fLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2919.1999999999998" y="1826.5367316341831"/>
+            <point key="canvasLocation" x="-2660" y="1899"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s43-Sv-tr1">
@@ -483,12 +486,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dC7-LH-coY">
-                                <rect key="frame" x="149" y="459" width="44" height="51"/>
+                                <rect key="frame" x="165" y="473" width="44" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
-                                    <action selector="editButtonTapped:" destination="ABO-Cc-gSz" eventType="touchUpInside" id="93J-dU-aZI"/>
-                                    <segue destination="CM2-es-DDO" kind="show" identifier="librarianEdit" id="kw9-DO-ZrH"/>
+                                    <action selector="editButtonTapped:" destination="ABO-Cc-gSz" eventType="touchUpInside" id="JeC-x9-aj6"/>
+                                    <segue destination="CM2-es-DDO" kind="show" identifier="librarianEdit" id="ueL-yl-7B2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -546,12 +549,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="560" height="272"/>
-        <image name="login" width="820" height="200"/>
-        <image name="start" width="247.91999816894531" height="71"/>
+        <image name="add" width="280" height="136"/>
+        <image name="login" width="410" height="100"/>
+        <image name="start" width="516" height="148"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UbQ-qD-BRf"/>
-        <segue reference="kw9-DO-ZrH"/>
+        <segue reference="0h6-lJ-fTQ"/>
+        <segue reference="ueL-yl-7B2"/>
     </inferredMetricsTieBreakers>
 </document>
